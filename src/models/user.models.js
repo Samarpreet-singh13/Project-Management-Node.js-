@@ -109,14 +109,14 @@ userSchema.methods.generateRefreshtoken= function(){
 userSchema.methods.generateTemporaryToken= function(){
     const unHashedToken = crypto.randomBytes(20).toString("hex");
 
-    const HAshedToken=crypto
+    const HashedToken=crypto
         .createHash("sha256")
         .update(unHashedToken)
         .digest("hex")
 
     const tokenExpiry=Date.now()+20*60*1000; // 20 minutes
 
-    return {HAshedToken, unHashedToken, tokenExpiry};
+    return {HashedToken, unHashedToken, tokenExpiry};
 }
 
 

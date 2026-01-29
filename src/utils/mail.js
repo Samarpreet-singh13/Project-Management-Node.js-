@@ -3,7 +3,7 @@ import Mailgen from "mailgen";
 import nodemailer from "nodemailer";
 
 // for sending email i have used mailtrap service
-const sendEmail=async(options)=>{
+export const sendEmail=async(options)=>{
     const mailGenerator=new Mailgen({
         theme:'default',
         product:{
